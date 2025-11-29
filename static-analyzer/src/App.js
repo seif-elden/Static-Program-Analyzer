@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Play, Download, AlertCircle, CheckCircle, Info, FileText, GitBranch, Activity, Code } from 'lucide-react';
 
 const StaticAnalyzer = () => {
@@ -443,7 +443,7 @@ const StaticAnalyzer = () => {
     if (match) {
       const expr = match[1].trim();
       // Extract binary operations
-      const ops = expr.match(/(\w+\s*[+\-*\/]\s*\w+)/g);
+      const ops = expr.match(/(\w+\s*[+\-*/]\s*\w+)/g);
       if (ops) exprs.push(...ops.map(e => e.replace(/\s+/g, ' ')));
     }
     
